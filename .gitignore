@@ -17,3 +17,4 @@ snapshots.js
 .nyc_output
 coverage
 dist
+.metals
