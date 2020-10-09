@@ -5,8 +5,8 @@ class HomePage {
         cy.visit('https://standprof.co.uk')
     }
     
-    containsTitle(title) {
-        cy.get('h2').should('have.text', title)
+    getSectionTitle() {
+        return cy.get('h2')
     }
     
     viewOurServices()  {

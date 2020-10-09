@@ -9,19 +9,21 @@ describe('Home page', () => {
     })
 
     it('User sees title OUR TOP SERVICES', () => {        
-        homePage.containsTitle('OUR TOP SERVICES')
+        homePage.getSectionTitle()
+            .should('contain', 'OUR TOP SERVICES')
     })
 
     it('User opens Our Services page', () => {
         const ourServicesPage = homePage.viewOurServices()
-        ourServicesPage.isOpened()
+        ourServicesPage.getPageTitle()
+            .should('be.visible')
+            .should('contain', 'OUR SERVICES')
     })
 
-    it.only('User sends an email via Contact Us form', () => {
+    it('User sends an email via Contact Us form', () => {
         homePage.sendEmail('John Smith', 'tester1@standprof.co.uk', 'Hello, how are you?')
         homePage.getThankYouMessage()
             .should('be.visible')
             .should('contain.text', 'Thank you for your message')
-
     })
 })

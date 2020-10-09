@@ -1,6 +1,6 @@
 class OurServicesPage {
-    isOpened() {
-        cy.get('h2').contains('OUR SERVICES').should('be.visible')
+    getPageTitle() {
+        return cy.get('h2')
     }
 }
 
