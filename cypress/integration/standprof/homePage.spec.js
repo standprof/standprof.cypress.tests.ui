@@ -16,4 +16,12 @@ describe('Home page', () => {
         const ourServicesPage = homePage.viewOurServices()
         ourServicesPage.isOpened()
     })
+
+    it.only('User sends an email via Contact Us form', () => {
+        homePage.sendEmail('John Smith', 'tester1@standprof.co.uk', 'Hello, how are you?')
+        homePage.getThankYouMessage()
+            .should('be.visible')
+            .should('contain.text', 'Thank you for your message')
+
+    })
 })
